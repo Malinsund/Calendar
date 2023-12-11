@@ -46,7 +46,7 @@
             </div>
             <div class="current-day-events">
               <div>Current Events:</div>
-              <ul class="current-day-events-list">
+              <ul class="current-day-events-list" data-cy="todo-list">
                 <li>
                   <i class="fa-solid fa-xmark cursor-pointer delete-event" style="display: none;"></i>
                   <i class="fa-solid fa-pencil cursor-pointer edit-event" style="display: none;"></i>
@@ -60,8 +60,15 @@
                 data-cy="todo-title-input" 
                 placeholder="Create an Event"
               />
+              <input 
+              type="date"
+              class="add-todo-date-field"
+              data-cy="todo-date-input"
+              placeholder="Date of event"
+              />
               <span
                 class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"
+                data-cy="save-todo-button"
               ></span>
             </div>
           </div>
