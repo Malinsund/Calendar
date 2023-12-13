@@ -17,7 +17,7 @@
   </head>
   <body>
     <canvas class="weather"></canvas>
-    <header>
+    <header data-cy="welcome-segment">
       <h1 id="todaysMonthDate"><!-- JS --></h1>
       <div class="flex">
         <h2 id="todaysDay"><!-- JS--></h2>
@@ -44,20 +44,33 @@
               <h1 class="calendar-left-side-day"></h1>
               <div class="calendar-left-side-day-of-week"></div>
             </div>
+
             <div class="current-day-events">
-              <div>Current Events:</div>
+              <div class="event-title">Planned events:</div>
               <ul class="current-day-events-list" data-cy="todo-list">
                 <li>
-                  <i class="fa-solid fa-xmark cursor-pointer delete-event" style="display: none;"></i>
-                  <i class="fa-solid fa-pencil cursor-pointer edit-event" style="display: none;"></i>
+
+                  <i
+                    class="fa-solid fa-pencil cursor-pointer edit-event"
+                    style="display: none"
+                  ></i>
+                  <i
+                    class="fa-solid fa-xmark cursor-pointer delete-event"
+                    style="display: none"
+                  ></i>
+
                 </li>
               </ul>
+            </div>
+            <span class="event-count"></span>
+            <div class="add-date">
+              <input type="date" data-cy="todo-date-input">
             </div>
             <div class="add-event-day">
               <input
                 type="text"
                 class="add-event-day-field"
-                data-cy="todo-title-input" 
+                data-cy="todo-title-input"
                 placeholder="Create an Event"
               />
               <input 
@@ -77,26 +90,28 @@
               <div class="calendar-change-year-slider">
                 <span
                   class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"
+                  data-cy="prev-month"
                 ></span>
                 <span class="calendar-current-year"></span>
+                <span class="calendar-current-month"></span>
                 <span
                   class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"
+                  data-cy="next-month"
                 ></span>
               </div>
             </div>
-            <div class="calendar-month-list">
-              <ul class="calendar-month"></ul>
-            </div>
+
             <div class="calendar-week-list">
               <ul class="calendar-week"></ul>
             </div>
-            <div class="calendar-day-list">
-              <ul class="calendar-days" data-cy="calendar-cell"></ul>
-            </div>
+            <ul class="calendar-days"></ul>
+            <div class="calendar-day-list"></div>
           </div>
         </div>
       </aside>
     </main>
+    <script src="todo.js"></script>
+    <script src="localstorage.js"></script>
     <script src="main.js"></script>
     <script src="today.js"></script>
     <script src="weather.js"></script>
